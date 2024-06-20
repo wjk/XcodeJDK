@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84EDBBF62C24928F007228A7 /* Home in Copy Java Home */ = {isa = PBXBuildFile; fileRef = 84EDBBF42C24927B007228A7 /* Home */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84EDBBFA2C2492C8007228A7 /* libjli.dylib in Copy libjli.dylib */ = {isa = PBXBuildFile; fileRef = 84EDBBF72C2492A9007228A7 /* libjli.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84EDBBF52C249283007228A7 /* Copy Java Home */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents;
+			dstSubfolderSpec = 1;
+			files = (
+				84EDBBF62C24928F007228A7 /* Home in Copy Java Home */,
+			);
+			name = "Copy Java Home";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EDBBF92C2492B9007228A7 /* Copy libjli.dylib */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/MacOS;
+			dstSubfolderSpec = 1;
+			files = (
+				84EDBBFA2C2492C8007228A7 /* libjli.dylib in Copy libjli.dylib */,
+			);
+			name = "Copy libjli.dylib";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		84EDBAAD2C2482E8007228A7 /* jdk-22.0.1-multiarch.jdk */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jdk-22.0.1-multiarch.jdk"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EDBAB22C24832C007228A7 /* jdk.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = jdk.xcconfig; sourceTree = "<group>"; };
+		84EDBAB42C2483BE007228A7 /* download-jdks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "download-jdks.sh"; sourceTree = "<group>"; };
+		84EDBAB62C2484B1007228A7 /* extract-jdks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "extract-jdks.sh"; sourceTree = "<group>"; };
+		84EDBAB92C248733007228A7 /* merge-jdks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "merge-jdks.sh"; sourceTree = "<group>"; };
+		84EDBBF42C24927B007228A7 /* Home */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Home; path = merged_jdk/Contents/Home; sourceTree = "<group>"; };
+		84EDBBF72C2492A9007228A7 /* libjli.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjli.dylib; path = merged_jdk/Contents/MacOS/libjli.dylib; sourceTree = "<group>"; };
+		84EDBBFB2C2494C8007228A7 /* JDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JDK-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84EDBAAA2C2482E8007228A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84EDBAA22C24828E007228A7 = {
+			isa = PBXGroup;
+			children = (
+				84EDBBFB2C2494C8007228A7 /* JDK-Info.plist */,
+				84EDBBF72C2492A9007228A7 /* libjli.dylib */,
+				84EDBBF42C24927B007228A7 /* Home */,
+				84EDBAB32C2483B1007228A7 /* scripts */,
+				84EDBAB22C24832C007228A7 /* jdk.xcconfig */,
+				84EDBAAE2C2482E8007228A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84EDBAAE2C2482E8007228A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84EDBAAD2C2482E8007228A7 /* jdk-22.0.1-multiarch.jdk */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84EDBAB32C2483B1007228A7 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				84EDBAB42C2483BE007228A7 /* download-jdks.sh */,
+				84EDBAB62C2484B1007228A7 /* extract-jdks.sh */,
+				84EDBAB92C248733007228A7 /* merge-jdks.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84EDBAAC2C2482E8007228A7 /* OpenJDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84EDBAAF2C2482E8007228A7 /* Build configuration list for PBXNativeTarget "OpenJDK" */;
+			buildPhases = (
+				84EDBAB52C248424007228A7 /* Download OpenJDK Binaries */,
+				84EDBAB82C2486B6007228A7 /* Extract OpenJDK Binaries */,
+				84EDBABA2C24879D007228A7 /* Merge OpenJDK Binaries */,
+				84EDBBF52C249283007228A7 /* Copy Java Home */,
+				84EDBBF92C2492B9007228A7 /* Copy libjli.dylib */,
+				84EDBAA92C2482E8007228A7 /* Sources */,
+				84EDBAAA2C2482E8007228A7 /* Frameworks */,
+				84EDBAAB2C2482E8007228A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenJDK;
+			productName = OpenJDK;
+			productReference = 84EDBAAD2C2482E8007228A7 /* jdk-22.0.1-multiarch.jdk */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84EDBAA32C24828E007228A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					84EDBAAC2C2482E8007228A7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 84EDBAA62C24828E007228A7 /* Build configuration list for PBXProject "XcodeJDK" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84EDBAA22C24828E007228A7;
+			productRefGroup = 84EDBAAE2C2482E8007228A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84EDBAAC2C2482E8007228A7 /* OpenJDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84EDBAAB2C2482E8007228A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84EDBAB52C248424007228A7 /* Download OpenJDK Binaries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/jdk.xcconfig",
+				"$(SRCROOT)/scripts/download-jdks.sh",
+			);
+			name = "Download OpenJDK Binaries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/openjdk-$(JDK_VERISON)-x64.stamp",
+				"$(DERIVED_FILE_DIR)/openjdk-$(JDK_VERSION)-arm64.stamp",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". ${SRCROOT}/scripts/download-jdks.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		84EDBAB82C2486B6007228A7 /* Extract OpenJDK Binaries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/jdk.xcconfig",
+				"$(SRCROOT)/scripts/extract-jdks.sh",
+			);
+			name = "Extract OpenJDK Binaries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/jdk-$(JDK_VERSION)-x64.extract",
+				"$(DERIVED_FILE_DIR)/jdk-$(JDK_VERSION)-arm64.extract",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". ${SRCROOT}/scripts/extract-jdks.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		84EDBABA2C24879D007228A7 /* Merge OpenJDK Binaries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/jdk.xcconfig",
+				"$(SRCROOT)/scripts/merge-jdks.sh",
+			);
+			name = "Merge OpenJDK Binaries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/jdk-merge.stamp",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". ${SRCROOT}/scripts/merge-jdks.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84EDBAA92C2482E8007228A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84EDBAA72C24828E007228A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		84EDBAA82C24828E007228A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		84EDBAB02C2482E8007228A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84EDBAB22C24832C007228A7 /* jdk.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JDK-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright OpenJDK Project. Distributed under the terms of GPLv2 with Classpath exception.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The application is requesting access to the microphone.";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = /Library/JavaVirtualMachines;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = "$(JDK_VERSION)";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bearware.OpenJDK-$(JDK_VERSION)";
+				PRODUCT_MODULE_NAME = OpenJDK;
+				PRODUCT_NAME = "jdk-$(JDK_VERSION)-multiarch";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = jdk;
+			};
+			name = Debug;
+		};
+		84EDBAB12C2482E8007228A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84EDBAB22C24832C007228A7 /* jdk.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JDK-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright OpenJDK Project. Distributed under the terms of GPLv2 with Classpath exception.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The application is requesting access to the microphone.";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = /Library/JavaVirtualMachines;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = "$(JDK_VERSION)";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bearware.OpenJDK-$(JDK_VERSION)";
+				PRODUCT_MODULE_NAME = OpenJDK;
+				PRODUCT_NAME = "jdk-$(JDK_VERSION)-multiarch";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = jdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84EDBAA62C24828E007228A7 /* Build configuration list for PBXProject "XcodeJDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EDBAA72C24828E007228A7 /* Debug */,
+				84EDBAA82C24828E007228A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84EDBAAF2C2482E8007228A7 /* Build configuration list for PBXNativeTarget "OpenJDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EDBAB02C2482E8007228A7 /* Debug */,
+				84EDBAB12C2482E8007228A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84EDBAA32C24828E007228A7 /* Project object */;
+}

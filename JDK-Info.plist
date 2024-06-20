@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>JavaVM</key>
+	<dict>
+		<key>JVMCapabilities</key>
+		<array>
+			<string>CommandLine</string>
+		</array>
+		<key>JDKVersion</key>
+		<string>$(JDK_VERSION)</string>
+		<key>JVMVendor</key>
+		<string>William Kent</string>
+		<key>JVMPlatformVersion</key>
+		<string>$(JDK_VERSION)</string>
+		<key>JVMMinimumSystemVersion</key>
+		<string>11.0.0</string>
+		<key>JVMMinimumFrameworkVersion</key>
+		<string>13.2.9</string>
+	</dict>
+</dict>
+</plist>

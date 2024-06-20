@@ -1,0 +1,13 @@
+//
+//  jdk.xcconfig
+//  XcodeJDK
+//
+//  Created by William Kent on 6/20/24.
+//
+
+JDK_VERSION                 = 22.0.1
+
+// Do not include the https:// part here, or Xcode will treat that as a comment
+// delimiter despite the quoted strings and cause the build to malfunction.
+JDK_DOWNLOAD_URL_INTEL      = download.java.net/java/GA/jdk22.0.1/c7ec1332f7bb44aeba2eb341ae18aca4/8/GPL/openjdk-22.0.1_macos-x64_bin.tar.gz
+JDK_DOWNLOAD_URL_ARM64      = download.java.net/java/GA/jdk22.0.1/c7ec1332f7bb44aeba2eb341ae18aca4/8/GPL/openjdk-22.0.1_macos-aarch64_bin.tar.gz
