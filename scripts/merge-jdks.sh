@@ -37,12 +37,12 @@ find . -type f | while read file; do
         echo lipo $file
         rm -f ${SRCROOT}/merged_jdk/${file}
         lipo -create -output ${SRCROOT}/merged_jdk/${file} $file ../jdk-${JDK_VERSION}-arm64.jdk/${file}
-        chmod 644 ${SRCROOT}/merged_jdk/${file}
+        chmod u+w ${SRCROOT}/merged_jdk/${file}
     else
         echo cp $file
         rm -f ${SRCROOT}/merged-jdk/${file}
         cp $file ${SRCROOT}/merged_jdk/${file}
-        chmod 644 ${SRCROOT}/merged_jdk/${file}
+        chmod u+w ${SRCROOT}/merged_jdk/${file}
     fi
 done
 
