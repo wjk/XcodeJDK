@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		84EDBBF62C24928F007228A7 /* Home in Copy Java Home */ = {isa = PBXBuildFile; fileRef = 84EDBBF42C24927B007228A7 /* Home */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84EDBBFA2C2492C8007228A7 /* libjli.dylib in Copy libjli.dylib */ = {isa = PBXBuildFile; fileRef = 84EDBBF72C2492A9007228A7 /* libjli.dylib */; };
+		84F633302C2DCC5700045D8E /* openjdk-22.0.1-src.zip in Resources */ = {isa = PBXBuildFile; fileRef = 84F6332F2C2DCC5700045D8E /* openjdk-22.0.1-src.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		84EDBBF42C24927B007228A7 /* Home */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Home; path = merged_jdk/Contents/Home; sourceTree = "<group>"; };
 		84EDBBF72C2492A9007228A7 /* libjli.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjli.dylib; path = merged_jdk/Contents/MacOS/libjli.dylib; sourceTree = "<group>"; };
 		84EDBBFB2C2494C8007228A7 /* JDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JDK-Info.plist"; sourceTree = "<group>"; };
+		84F6332F2C2DCC5700045D8E /* openjdk-22.0.1-src.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "openjdk-22.0.1-src.zip"; path = "merged_jdk/openjdk-22.0.1-src.zip"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		84EDBAA22C24828E007228A7 = {
 			isa = PBXGroup;
 			children = (
+				84F6332F2C2DCC5700045D8E /* openjdk-22.0.1-src.zip */,
 				84EDBBFB2C2494C8007228A7 /* JDK-Info.plist */,
 				84EDBBF72C2492A9007228A7 /* libjli.dylib */,
 				84EDBBF42C24927B007228A7 /* Home */,
@@ -150,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F633302C2DCC5700045D8E /* openjdk-22.0.1-src.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +177,7 @@
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/openjdk-$(JDK_VERISON)-x64.stamp",
 				"$(DERIVED_FILE_DIR)/openjdk-$(JDK_VERSION)-arm64.stamp",
+				"$(SRCROOT)/merged_jdk/openjdk-$(JDK_VERSION)-src.zip",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
