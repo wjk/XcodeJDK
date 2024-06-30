@@ -31,6 +31,10 @@ is_macho () {
     file $1 | fgrep Mach-O && return 0 || return 1
 }
 
+do_copy () {
+    cp -c $1 $2 || cp $1 $2
+}
+
 cd ../jdk-${JDK_VERSION}-x64.jdk
 find . -type f | while read file; do
     if is_macho $file; then
@@ -41,7 +45,7 @@ find . -type f | while read file; do
     else
         echo cp $file
         rm -f ${SRCROOT}/merged-jdk/${file}
-        cp $file ${SRCROOT}/merged_jdk/${file}
+        do_copy $file ${SRCROOT}/merged_jdk/${file}
         chmod u+w ${SRCROOT}/merged_jdk/${file}
     fi
 done
