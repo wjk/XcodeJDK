@@ -28,7 +28,7 @@ find . -type d -print | while read directory; do
 done
 
 is_macho () {
-    file $1 | fgrep Mach-O && return 0 || return 1
+    file $1 | fgrep -q Mach-O && return 0 || return 1
 }
 
 do_copy () {
