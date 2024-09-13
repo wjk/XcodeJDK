@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84B7ED942C948EFE00312CCF /* force_link.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B7ED932C948EFE00312CCF /* force_link.c */; };
 		84EDBBF62C24928F007228A7 /* Home in Copy Java Home */ = {isa = PBXBuildFile; fileRef = 84EDBBF42C24927B007228A7 /* Home */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84EDBBFA2C2492C8007228A7 /* libjli.dylib in Copy libjli.dylib */ = {isa = PBXBuildFile; fileRef = 84EDBBF72C2492A9007228A7 /* libjli.dylib */; };
 		84F633302C2DCC5700045D8E /* openjdk-22.0.1-src.zip in Resources */ = {isa = PBXBuildFile; fileRef = 84F6332F2C2DCC5700045D8E /* openjdk-22.0.1-src.zip */; };
@@ -38,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84B7ED932C948EFE00312CCF /* force_link.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = force_link.c; sourceTree = "<group>"; };
 		84EDBAAD2C2482E8007228A7 /* jdk-22.0.1-multiarch.jdk */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jdk-22.0.1-multiarch.jdk"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EDBAB22C24832C007228A7 /* jdk.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = jdk.xcconfig; sourceTree = "<group>"; };
 		84EDBAB42C2483BE007228A7 /* download-jdks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "download-jdks.sh"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		84EDBAA22C24828E007228A7 = {
 			isa = PBXGroup;
 			children = (
+				84B7ED932C948EFE00312CCF /* force_link.c */,
 				84F6332F2C2DCC5700045D8E /* openjdk-22.0.1-src.zip */,
 				84EDBBFB2C2494C8007228A7 /* JDK-Info.plist */,
 				84EDBBF72C2492A9007228A7 /* libjli.dylib */,
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B7ED942C948EFE00312CCF /* force_link.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,12 +318,19 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The application is requesting access to the microphone.";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_PATH = /Library/JavaVirtualMachines;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "$(JDK_VERSION)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-reexport_library",
+					"-Xlinker",
+					"$(SRCROOT)/merged_jdk/Contents/MacOS/libjli.dylib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bearware.OpenJDK-$(JDK_VERSION)";
 				PRODUCT_MODULE_NAME = OpenJDK;
 				PRODUCT_NAME = "jdk-$(JDK_VERSION)-multiarch";
@@ -385,11 +396,18 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The application is requesting access to the microphone.";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_PATH = /Library/JavaVirtualMachines;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "$(JDK_VERSION)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-reexport_library",
+					"-Xlinker",
+					"$(SRCROOT)/merged_jdk/Contents/MacOS/libjli.dylib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bearware.OpenJDK-$(JDK_VERSION)";
 				PRODUCT_MODULE_NAME = OpenJDK;
 				PRODUCT_NAME = "jdk-$(JDK_VERSION)-multiarch";
